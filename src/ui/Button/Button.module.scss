@@ -1,0 +1,19 @@
+.someButton {
+  cursor: pointer;
+  width: 182px;
+  height: 52px;
+  border: 2px solid white;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  transition: 0.25s;
+
+  font-family: Overpass;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.someButton:hover {
+  background-color: white;
+  color: black;
+}

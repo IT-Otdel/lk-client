@@ -1,0 +1,19 @@
+.anyTitleTextContainer {
+  font-family: Overpass;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.anyTitle {
+  color: #B398E3;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.72px;
+}
+
+.anyText {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30.38px;
+}
