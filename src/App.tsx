@@ -1,19 +1,18 @@
 import { ProfilePage } from './pages/ProfilePage';
 import { Route, Routes } from 'react-router';
-import { Header } from './components/header';
 import './index.css';
 import { BrowserRouter } from 'react-router';
+import { AppLayout } from 'components/layout/AppLayout';
 
 function App() {
     return (
-        <>
-            <Header />
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<ProfilePage />} />
-                </Routes>
-            </BrowserRouter>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<AppLayout />}>
+                    <Route path="profile" element={<ProfilePage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 

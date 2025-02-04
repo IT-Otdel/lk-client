@@ -14,4 +14,5 @@ export interface IProjectData {
     title : string
     type : string
     status : string
+    id : number
 }

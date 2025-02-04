@@ -37,8 +37,8 @@ export const Profile = () => {
                         Технологии
                     </div>
                     <div className={styles.profileCardTechnologiesContainer}>
-                        {userData.technologies.map((item) => (
-                            <TechnologyItem text={item} key={crypto.randomUUID()}/>
+                        {userData.technologies.map((item, i) => (
+                            <TechnologyItem text={item} key={i}/>
                         ))}
                     </div>
                 </div>

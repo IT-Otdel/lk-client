@@ -13,7 +13,7 @@ export const ProfileProjects = () => {
                         status={project.status}
                         category={project.type}
                         image={project.image}
-                        key={crypto.randomUUID()}
+                        key={project.id}
                     />
                 ))}
             </div>
