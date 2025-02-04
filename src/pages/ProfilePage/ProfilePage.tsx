@@ -1,4 +1,5 @@
-import {Profile, ProfileProjects} from "../../modules";
+import { Profile } from 'modules/Profile';
+import { ProfileProjects } from 'modules/ProfileProjects';
 
 export const ProfilePage = () => {
     return (
@@ -6,5 +7,5 @@ export const ProfilePage = () => {
             <Profile />
             <ProfileProjects />
         </div>
-    )
-}
+    );
+};

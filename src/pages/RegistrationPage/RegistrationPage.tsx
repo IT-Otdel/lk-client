@@ -1,4 +1,4 @@
-import { RegistrationForm } from '../../modules';
+import { RegistrationForm } from 'modules/RegistrationForm';
 import styles from './RegistrationPage.module.scss';
 
 export const RegistrationPage = () => {

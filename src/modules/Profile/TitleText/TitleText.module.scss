@@ -1,4 +1,4 @@
-@use "../../../styles/variables";
+@use "styles/variables" as *;
 
 .anyTitleTextContainer {
   font-family: Overpass;
@@ -8,7 +8,7 @@
 }
 
 .anyTitle {
-  color: variables.$my-grey;
+  color: $my-grey;
   font-size: 14px;
   font-weight: 500;
   line-height: 17.72px;

@@ -1,4 +1,4 @@
-@use "../../styles/variables";
+@use "styles/variables" as *;
 
 header {
   display: flex;
@@ -29,7 +29,7 @@ header {
   height: 52px;
   border: 2px solid white;
   border-radius: 4px;
-  background-color: variables.$back-color;
+  background-color: $back-color;
   color: white;
   transition: 0.25s;
 
@@ -40,5 +40,5 @@ header {
 
 .someButton:hover {
   background-color: white;
-  color: variables.$back-color;
+  color: $back-color;
 }

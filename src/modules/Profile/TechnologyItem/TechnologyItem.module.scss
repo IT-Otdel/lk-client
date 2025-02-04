@@ -1,4 +1,4 @@
-@use "../../../styles/variables";
+@use "styles/variables" as *;
 
 .technologyItem {
     position: relative;
@@ -11,7 +11,7 @@
     inset: 0;
     border-radius: 10px; 
     padding: 2px; 
-    background: variables.$grey-gradient; 
+    background: $grey-gradient; 
     mask: 
       linear-gradient(#000 0 0) content-box, 
       linear-gradient(#000 0 0);

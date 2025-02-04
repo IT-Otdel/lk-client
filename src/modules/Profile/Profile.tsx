@@ -1,4 +1,4 @@
-import { TitleText } from '../../components';
+import { TitleText } from './TitleText/TitleText';
 import styles from './Profile.module.scss';
 import { userData } from '../../mock-data/data';
 import { TechnologyItem } from './TechnologyItem/TechnologyItem';
@@ -38,7 +38,7 @@ export const Profile = () => {
                     </div>
                     <div className={styles.profileCardTechnologiesContainer}>
                         {userData.technologies.map((item) => (
-                            <TechnologyItem text={item} />
+                            <TechnologyItem text={item} key={crypto.randomUUID()}/>
                         ))}
                     </div>
                 </div>
