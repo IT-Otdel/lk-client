@@ -1,11 +1,10 @@
-import {FC, JSX} from "react";
-import {RegistrationForm} from "../../modules";
-import styles from "./RegistrationPage.module.scss";
+import { RegistrationForm } from '../../modules';
+import styles from './RegistrationPage.module.scss';
 
-export const RegistrationPage : FC = () : JSX.Element => {
-    return(
+export const RegistrationPage = () => {
+    return (
         <div className={styles.container}>
-            <RegistrationForm/>
+            <RegistrationForm />
         </div>
-    )
-}
+    );
+};

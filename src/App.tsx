@@ -1,16 +1,17 @@
-import {ProfilePage} from "./pages";
-import "./index.css"
+import { ProfilePage } from './pages';
+import { Route, Routes } from 'react-router';
+import { Header } from './components';
+import './index.css';
 
 function App() {
-
-
-  return (
-    <>
-        <main>
-            <ProfilePage/>
-        </main>
-    </>
-  )
+    return (
+        <>
+            <Header />
+            <Routes>
+                <Route path="/" element={<ProfilePage />} />
+            </Routes>
+        </>
+    );
 }
 
-export default App
+export default App;

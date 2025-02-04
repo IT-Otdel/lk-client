@@ -1,9 +1,11 @@
+@use "../../../styles/variables";
+
 .categoryLabel {
   font-family: Inter;
   font-size: 12px;
   font-weight: 500;
 
-  background: #D38FD1;
+  background: variables.$soft-pink;
   border-radius: 10px;
   padding: 6px 8px;
 }

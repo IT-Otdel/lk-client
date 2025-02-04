@@ -1,14 +1,10 @@
-import { FC, JSX } from "react"
-import styles from "./TechnologyItem.module.scss"
+import { FC } from 'react';
+import styles from './TechnologyItem.module.scss';
 
 interface ItemProps {
-    text : string
+    text: string;
 }
 
-export const TechnologyItem : FC<ItemProps> = ({ text }) : JSX.Element => {
-    return (
-        <div className={styles.technologyItem}>
-            {text}
-        </div>
-    )
-}
+export const TechnologyItem: FC<ItemProps> = ({ text }) => {
+    return <div className={styles.technologyItem}>{text}</div>;
+};

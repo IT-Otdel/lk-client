@@ -1,32 +1,20 @@
-import {FC, JSX} from "react";
-import {TechDepLogo} from "./icons/TechDepLogo.tsx";
-import {Button} from "../../ui";
-import styles from "./Header.module.scss";
+import styles from './Header.module.scss';
+import logo from './logo.svg';
 
-export const Header : FC = (): JSX.Element => {
+export const Header = () => {
     return (
         <header>
-            <TechDepLogo/>
+            <img src={logo} />
             <div className={styles.navContainer}>
-                <div className={styles.navItem}>
-                    Возможности
-                </div>
-                <div className={styles.navItem}>
-                    Обучение
-                </div>
-                <div className={styles.navItem}>
-                    Наши люди
-                </div>
-                <div className={styles.navItem}>
-                    FAQ
-                </div>
-                <div className={styles.navItem}>
-                    Личный кабинет
-                </div>
+                <div className={styles.navItem}>Возможности</div>
+                <div className={styles.navItem}>Обучение</div>
+                <div className={styles.navItem}>Наши люди</div>
+                <div className={styles.navItem}>FAQ</div>
+                <div className={styles.navItem}>Личный кабинет</div>
             </div>
-            <Button text="Записаться"/>
+            <button className={styles.someButton}>
+                Записаться
+            </button>
         </header>
-    )
-}
-
-
+    );
+};

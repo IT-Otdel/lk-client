@@ -1,13 +1,10 @@
-import {FC, JSX} from "react";
-import {Header} from "../../components";
 import {Profile, ProfileProjects} from "../../modules";
 
-export const ProfilePage : FC = () : JSX.Element => {
+export const ProfilePage = () => {
     return (
-        <>
-            <Header />
+        <div>
             <Profile />
             <ProfileProjects />
-        </>
+        </div>
     )
 }
