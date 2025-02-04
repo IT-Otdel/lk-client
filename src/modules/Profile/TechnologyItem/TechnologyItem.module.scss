@@ -1,0 +1,19 @@
+@use "styles/variables" as *;
+
+.technologyItem {
+    position: relative;
+    padding: 10px 12px;
+}
+
+.technologyItem::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px; 
+    padding: 2px; 
+    background: $grey-gradient; 
+    mask: 
+      linear-gradient(#000 0 0) content-box, 
+      linear-gradient(#000 0 0);
+    mask-composite: exclude; 
+}

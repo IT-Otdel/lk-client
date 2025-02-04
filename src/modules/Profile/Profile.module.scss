@@ -1,0 +1,47 @@
+@use "styles/variables" as *;
+
+.profileCardHeader {
+  font-family: Ubuntu;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 59px;
+  margin-bottom: 35px;
+}
+
+.profileCardBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileCardColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profileCardTechnologiesTitle {
+  font-family: Overpass;
+  font-size: 14px;
+  font-weight: 500;
+  color: $my-grey;
+  margin-bottom: 6px;
+}
+
+.profileCardTechnologiesContainer {
+  display: flex;
+  font-family: Ubuntu;
+  font-size: 20px;
+  font-weight: 400;
+  gap: 6px;
+  width: 262px;
+  flex-wrap: wrap;
+}
+
+.avatar {   
+  width: 167px;
+  height: 167px;
+  object-fit: cover;
+  clip-path: circle(50%); 
+}

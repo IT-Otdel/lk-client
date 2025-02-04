@@ -1,0 +1,47 @@
+.cardContainer {
+  width: 264px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.imageContainer {
+  width: 264px;
+  height: 191px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.projectImage {
+  mask-image: url("assets/mask/Rectangle 5.svg");
+  mask-repeat: no-repeat;
+  width: 264px;
+}
+
+.cornerButton {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: Overpass;
+  font-size: 21px;
+  font-weight: 500;
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 3;
+}
+
+
+
+.statusesContainer {
+  display: flex;
+  gap: 11px;
+}
+
