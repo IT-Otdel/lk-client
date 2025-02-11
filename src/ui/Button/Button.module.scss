@@ -1,0 +1,39 @@
+@use "styles/variables" as *;
+
+.button {
+    background-color: #4A7AA7D1;
+    background-image: url("./assets/background.svg");
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 58px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+
+    position: relative;
+    padding: 10px 12px;
+
+    font-family: inherit;
+    font-size: 20px;
+    color: white;
+    transition-duration: .2s
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px; 
+    padding: 2.1px; 
+    background: $grey-gradient; 
+    mask: 
+      linear-gradient(#000 0 0) content-box, 
+      linear-gradient(#000 0 0);
+    mask-composite: exclude; 
+}
+
+.button:active {
+  background-color: #679CCD;
+  transform: scale(.95);
+}
+
