@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from 'ui/Button';
 import { Input } from 'ui/Input';
 import { InputType } from 'ui/Input';
+import { ButtonType } from 'ui/Button';
 
 export const UiShowRoom = () => {
     const [text, setText] = useState('');
@@ -10,7 +11,7 @@ export const UiShowRoom = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <Button text="Зарегестрироваться" />
+            <Button text="Зарегестрироваться" type={ButtonType.button} />
             <Input
                 placeholder="Введите пароль"
                 type={InputType.password}

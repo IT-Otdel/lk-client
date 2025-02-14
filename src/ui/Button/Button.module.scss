@@ -2,13 +2,14 @@
 
 .button {
     background-color: #4A7AA7D1;
-    background-image: url("./assets/background.svg");
+    background-image: url("./assets/background.png");
     background-repeat: no-repeat;
-    width: 400px;
-    height: 58px;
+    min-width: 400px;
+    min-height: 58px;
     border: none;
     border-radius: 10px;
     outline: none;
+    cursor: pointer;
 
     position: relative;
     padding: 10px 12px;

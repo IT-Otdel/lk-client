@@ -1,10 +1,20 @@
 import { FC } from 'react';
 import styles from './Button.module.scss';
 
-interface ButtonProps {
-    text: string;
+export enum ButtonType {
+    button = "button",
+    submit = "submit"
 }
 
-export const Button: FC<ButtonProps> = ({ text }) => {
-    return <button className={styles.button}>{text}</button>;
+interface ButtonProps {
+    text: string;
+    type: ButtonType;
+}
+
+export const Button: FC<ButtonProps> = ({ text, type }) => {
+    return (
+        <button className={styles.button} type={type}>
+            {text}
+        </button>
+    );
 };
