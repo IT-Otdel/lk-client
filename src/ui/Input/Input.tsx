@@ -1,6 +1,5 @@
 import styles from './Input.module.scss';
 import { ChangeEvent, FC, useState } from 'react';
-import { InputType } from './types';
 import defaultPassword from './assets/defaultPassword.svg';
 import defaultEmail from './assets/defaultEmail.svg';
 import outlinedPassword from './assets/outlinedPassword.svg';
@@ -10,7 +9,7 @@ import closedEye from './assets/closedEye.svg';
 
 interface InputProps {
     placeholder: string;
-    type: InputType;
+    type: 'password' | 'text' | 'email';
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     value: string;
 }
@@ -21,97 +20,65 @@ export const Input: FC<InputProps> = ({
     onChange,
     value,
 }) => {
-    const [inputState, setInputState] = useState(type);
-    const [imageType, setImageType] = useState('default');
-    const [isActive, setIsActive] = useState(true);
+    const [inputType, setInputType] = useState<InputProps['type']>(type);
+    const [isActive, setIsActive] = useState(false);
 
-    const handleToggle = () => {
-        if (inputState === InputType.password) {
-            setInputState(InputType.text);
+    const toggleVisibility = () => {
+        if (inputType === 'password') {
+            setInputType('text');
         } else {
-            setInputState(InputType.password);
+            setInputType('password');
         }
-    };
-
-    const renderIcon = () => {
-        if (type === 'password') {
-            return (
-                <>
-                    <img
-                        src={
-                            imageType === 'default'
-                                ? defaultPassword
-                                : outlinedPassword
-                        }
-                        className={styles.icon}
-                    />
-                    <label className={styles.separator}></label>
-                </>
-            );
-        } else if (type === 'email') {
-            return (
-                <>
-                    <img
-                        src={
-                            imageType === 'default'
-                                ? defaultEmail
-                                : outlinedEmail
-                        }
-                        className={styles.icon}
-                    />
-                    <label className={styles.separator}></label>
-                </>
-            );
-        }
-        return <></>;
-    };
-
-    const renderEye = () => {
-        if (inputState === InputType.password)
-            return (
-                <img
-                    src={closedEye}
-                    className={styles.showHideIcon}
-                    onClick={handleToggle}
-                />
-            );
-        else
-            return (
-                <img
-                    src={eye}
-                    className={styles.showHideIcon}
-                    onClick={handleToggle}
-                />
-            );
     };
 
     return (
         <label
             className={styles.container}
             onFocus={() => {
-                setImageType('outlined');
                 setIsActive(true);
             }}
             onBlur={() => {
-                setImageType('default');
                 setIsActive(false);
-            }}
-            onMouseEnter={() => setImageType('otlined')}
-            onMouseLeave={() => {
-                if (!isActive) setImageType('default');
             }}
             tabIndex={-1}
         >
-            {renderIcon()}
+            {type === 'password' || type === 'email' ? (
+                <img
+                    src={
+                        type === 'password'
+                            ? isActive === false
+                                ? defaultPassword
+                                : outlinedPassword
+                            : isActive === false
+                              ? defaultEmail
+                              : outlinedEmail
+                    }
+                    className={styles.icon}
+                />
+            ) : (
+                <></>
+            )}
+
+            {type === 'password' || type === 'email' ? (
+                <label className={styles.separator}></label>
+            ) : (
+                <></>
+            )}
 
             <input
                 className={styles.inputField}
-                type={inputState}
+                type={inputType}
                 placeholder={placeholder}
                 onChange={onChange}
                 value={value}
             />
-            {(type === InputType.password) && renderEye()}
+            {type === 'password' && (
+                <img
+                    src={inputType === 'password' ? closedEye : eye}
+                    className={styles.showHideIcon}
+                    onClick={toggleVisibility}
+                />
+            )}
         </label>
     );
 };
