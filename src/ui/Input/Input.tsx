@@ -21,8 +21,7 @@ export const Input: FC<InputProps> = ({
     onChange,
     value,
 }) => {
-    const [inputTypeState, setInputTypeState] =
-        useState<InputProps['type']>(type);
+    const [inputTypeState, setInputTypeState] = useState<InputType>(type);
     const [isActive, setIsActive] = useState(false);
 
     const toggleVisibility = () => {
@@ -44,7 +43,7 @@ export const Input: FC<InputProps> = ({
 
         return iconSrc;
     };
-    
+
     return (
         <label
             className={styles.container}
@@ -57,13 +56,10 @@ export const Input: FC<InputProps> = ({
             tabIndex={-1}
         >
             {type === InputType.password || type === InputType.email ? (
-                <img src={getIconSrc()} className={styles.icon} />
-            ) : (
-                <></>
-            )}
-
-            {type === InputType.password || type === InputType.email ? (
-                <label className={styles.separator}></label>
+                <>
+                    <img src={getIconSrc()} className={styles.icon} />
+                    <label className={styles.separator}></label>
+                </>
             ) : (
                 <></>
             )}
