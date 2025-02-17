@@ -1,7 +1,6 @@
 @use "styles/variables" as *;
 
 .profileCardHeader {
-  font-family: Ubuntu;
   font-size: 32px;
   font-weight: 500;
   text-align: left;
@@ -22,7 +21,6 @@
 }
 
 .profileCardTechnologiesTitle {
-  font-family: Overpass;
   font-size: 14px;
   font-weight: 500;
   color: $my-grey;
@@ -31,7 +29,6 @@
 
 .profileCardTechnologiesContainer {
   display: flex;
-  font-family: Ubuntu;
   font-size: 20px;
   font-weight: 400;
   gap: 6px;
