@@ -4,10 +4,10 @@ import styles from './Button.module.scss';
 
 interface ButtonProps {
     text: string;
-    type: "button" | "submit";
+    type?: "button" | "submit";
 }
 
-export const Button: FC<ButtonProps> = ({ text, type }) => {
+export const Button: FC<ButtonProps> = ({ text, type = 'button' }) => {
     return (
         <button className={styles.button} type={type}>
             {text}

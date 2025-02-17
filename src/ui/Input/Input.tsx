@@ -6,31 +6,45 @@ import outlinedPassword from './assets/outlinedPassword.svg';
 import outlinedEmail from './assets/outlinedEmail.svg';
 import eye from './assets/eye.svg';
 import closedEye from './assets/closedEye.svg';
+import { InputType } from './types';
 
 interface InputProps {
     placeholder: string;
-    type: 'password' | 'text' | 'email';
+    type?: InputType;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     value: string;
 }
 
 export const Input: FC<InputProps> = ({
     placeholder,
-    type,
+    type = InputType.text,
     onChange,
     value,
 }) => {
-    const [inputType, setInputType] = useState<InputProps['type']>(type);
+    const [inputTypeState, setInputTypeState] =
+        useState<InputProps['type']>(type);
     const [isActive, setIsActive] = useState(false);
 
     const toggleVisibility = () => {
-        if (inputType === 'password') {
-            setInputType('text');
+        if (inputTypeState === InputType.password) {
+            setInputTypeState(InputType.text);
         } else {
-            setInputType('password');
+            setInputTypeState(InputType.password);
         }
     };
 
+    const getIconSrc = () => {
+        let iconSrc;
+
+        if (type === InputType.password) {
+            iconSrc = isActive ? outlinedPassword : defaultPassword;
+        } else {
+            iconSrc = isActive ? outlinedEmail : defaultEmail;
+        }
+
+        return iconSrc;
+    };
+    
     return (
         <label
             className={styles.container}
@@ -42,24 +56,13 @@ export const Input: FC<InputProps> = ({
             }}
             tabIndex={-1}
         >
-            {type === 'password' || type === 'email' ? (
-                <img
-                    src={
-                        type === 'password'
-                            ? isActive === false
-                                ? defaultPassword
-                                : outlinedPassword
-                            : isActive === false
-                              ? defaultEmail
-                              : outlinedEmail
-                    }
-                    className={styles.icon}
-                />
+            {type === InputType.password || type === InputType.email ? (
+                <img src={getIconSrc()} className={styles.icon} />
             ) : (
                 <></>
             )}
 
-            {type === 'password' || type === 'email' ? (
+            {type === InputType.password || type === InputType.email ? (
                 <label className={styles.separator}></label>
             ) : (
                 <></>
@@ -67,14 +70,16 @@ export const Input: FC<InputProps> = ({
 
             <input
                 className={styles.inputField}
-                type={inputType}
+                type={inputTypeState}
                 placeholder={placeholder}
                 onChange={onChange}
                 value={value}
             />
             {type === 'password' && (
                 <img
-                    src={inputType === 'password' ? closedEye : eye}
+                    src={
+                        inputTypeState === InputType.password ? closedEye : eye
+                    }
                     className={styles.showHideIcon}
                     onClick={toggleVisibility}
                 />

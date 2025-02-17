@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from 'ui/Button';
-import { Input } from 'ui/Input';
+import { Input, InputType } from 'ui/Input';
 
 export const UiShowRoom = () => {
     const [text, setText] = useState('');
@@ -10,21 +10,21 @@ export const UiShowRoom = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <Button text="Зарегистрироваться" type="button" />
+            <Button text="Зарегистрироваться"/>
             <Input
                 placeholder="Введите пароль"
-                type="password"
+                type={InputType.password}
                 onChange={(e) => setPass(e.target.value)}
                 value={pass}
             />
             <Input
                 placeholder="Введите почту"
-                type="email"
+                type={InputType.email}
                 onChange={(e) => setMail(e.target.value)}
                 value={mail}
             />
             <Input
                 placeholder="aboba"
-                type="text"
                 onChange={(e) => setText(e.target.value)}
                 value={text}
             />
