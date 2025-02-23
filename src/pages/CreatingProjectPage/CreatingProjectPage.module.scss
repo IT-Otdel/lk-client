@@ -1,0 +1,155 @@
+@use "styles/mixins" as *;
+@use "styles/variables" as *;
+
+.container {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    .backButton {
+        color: #FFFFFF99;
+        text-decoration: none;
+    }
+
+    .arrow {
+        padding-right: 8px;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 24px;
+        margin: 0 0 8px 0
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 28px;
+        margin: 0;
+    }
+}
+
+.dropzone {
+    @include anyDropzone($background-purple-gradient, $purple-gradient);
+
+}
+
+.infoContainer {
+    height: 408px;
+    display: flex;
+    gap: 21px;
+
+    .titleDescription {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .titleInput {
+            font-family: Jost;
+            font-weight: 500;
+            font-size: 20px;
+            padding-left: 12px;
+            box-sizing: border-box;
+            color: #999999;
+
+            width: 100%;
+            height: 53px;
+            border-radius: 12px;
+            outline: none;
+            border: none;
+            background-color: #D9D9D90D;
+            margin-bottom: 21px
+        }
+
+        .descriptionInput {
+            @extend .titleInput;
+            flex-grow: 1;
+            resize: none;
+            padding-top: 12px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.dropzoneCoverContainer {
+    padding-top: 44px;
+    width: 100%;
+
+    .dropzoneCover {
+        @include anyDropzone($background-grey-gradient, $grey-gradient);
+        height: 100%;
+
+        .paragraph {
+            margin-bottom: 127px;
+        }
+    }
+}
+
+.createProjectButton {
+    position: relative;
+    align-self: flex-end;
+    width: 292px;
+    height: 55px;
+    cursor: pointer;
+
+    background: linear-gradient(90deg, rgba(71, 116, 196, 0.1) 0%, rgba(204, 204, 204, 0.1) 50%, rgba(71, 116, 196, 0.1) 100%);
+
+    border: none;
+    border-radius: 12px;
+    color: white;
+
+    font-family: Jost;
+    font-weight: 500;
+    font-size: 20px;
+
+    transition-duration: .1s;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 10px;
+        padding: 2px;
+        background: $purple-gradient;
+        mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+        mask-composite: exclude;
+    }
+
+    &:active {
+        background: linear-gradient(90deg, rgba(71, 116, 196, 0.1) 0%, rgba(204, 204, 204, 0.1) 100%, rgba(71, 116, 196, 0.1) 100%);
+        transform: scale(.95);
+
+    }
+}
+
+
+.tagsResourcesSection {
+    display: flex;
+    gap: 20px;
+
+    .itemsContainer {
+        margin-top: 9px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        max-width: 564px;
+    }
+
+    .tagsContainer {
+        width: 50%;
+    }
+
+    .resourceContainer {
+        width: 50%;
+    }
+}
+
+.tag {
+    @include anyTag(#929292);
+}
+
+.resource {
+    @include anyTag(#5B61F4);
+}
