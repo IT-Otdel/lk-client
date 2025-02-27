@@ -7,12 +7,14 @@ import outlinedEmail from './assets/outlinedEmail.svg';
 import eye from './assets/eye.svg';
 import closedEye from './assets/closedEye.svg';
 import { InputType } from './types';
+import clsx from 'clsx';
 
 interface InputProps {
     placeholder: string;
     type?: InputType;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     value: string;
+    className?: string;
 }
 
 export const Input: FC<InputProps> = ({
@@ -20,6 +22,7 @@ export const Input: FC<InputProps> = ({
     type = InputType.text,
     onChange,
     value,
+    className
 }) => {
     const [inputTypeState, setInputTypeState] = useState<InputType>(type);
     const [isActive, setIsActive] = useState(false);
@@ -46,7 +49,7 @@ export const Input: FC<InputProps> = ({
 
     return (
         <label
-            className={styles.container}
+            className={clsx(styles.container, className)}
             onFocus={() => {
                 setIsActive(true);
             }}

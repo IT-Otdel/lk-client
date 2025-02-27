@@ -5,12 +5,15 @@ import plus from "./assets/plus.svg"
 import xicon from "./assets/xicon.svg"
 import { useState } from "react"
 import { useDropzone } from 'react-dropzone'
+import { Input } from "ui/Input"
+import { InputType } from '../../ui/Input/types';
+import { Button } from "ui/Button"
 
 interface PhotoFile {
     file?: File;
     name: string;
     preview?: string;
-}//вопросики на будущее, чтоб не забыть. Пока сделал обрезано и без нормального дизайна при добавленных файлах. Попрошу дизайнеров сделать
+}// TODO - превью файлов для дропзоны
 
 
 export const CreatingProjectPage = () => {
@@ -70,7 +73,7 @@ export const CreatingProjectPage = () => {
             <div className={styles.dropzone} {...getRootPhotosProps()}>
                 <img src={plus} alt="Добавить изображение" className={styles.plus} />
                 <input {...getInputPhotosProps()} />
-                {photos.map(photo => <span>{photo.name}</span>)}
+                {photos.map((photo, index) => <span key={index}>{photo.name}</span>)}
                 <p className={styles.paragraph}>Перетащите чтобы добавить</p>
             </div>
 
@@ -78,13 +81,13 @@ export const CreatingProjectPage = () => {
             <div className={styles.infoContainer}>
                 <div className={styles.titleDescription}>
                     <h3>Название</h3>
-                    <input
+                    <Input
                         className={styles.titleInput}
-                        type="text"
+                        type={InputType.text}
                         placeholder="Введите название проекта"
                         onChange={(e) => setTitle(e.target.value)}
                         value={title}
-                        maxLength={50}
+                        // maxLength={50}
                     />
 
                     <h3>Описание</h3>
@@ -142,9 +145,11 @@ export const CreatingProjectPage = () => {
                 </div>
             </div>
 
-            <button className={styles.createProjectButton}>
-                Создать проект
-            </button>
+            <Button
+                className={styles.createProjectButton}
+                text="Создать проект"
+                type="button"
+            />
         </div>
     )
 }
