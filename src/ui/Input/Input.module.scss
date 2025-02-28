@@ -2,6 +2,7 @@
 
 .container {
     display: inline-flex;
+    vertical-align: middle;
     align-items: center;
     box-sizing: border-box;
     transition: none;
@@ -19,7 +20,7 @@
         $grey-gradient border-box;
 
     .inputField {
-        font-family: Jost, sans-serif ;
+        font-family: Jost, sans-serif;
         font-weight: 500;
 
         border: none;
@@ -33,8 +34,8 @@
     &:has(.inputField:hover),
     &:has(.inputField:focus) {
         background:
-        linear-gradient(#2f2f2f, #2f2f2f 0) padding-box,
-        $grey-gradient border-box;
+            linear-gradient(#2f2f2f, #2f2f2f 0) padding-box,
+            $grey-gradient border-box;
     }
 }
 
@@ -43,11 +44,18 @@
     height: 20px;
     background-color: #808080;
     margin: 0 12px 0 12px;
+
+}
+
+.separatorContainer {
+    display: flex;
+    
 }
 
 .icon {
     user-select: none;
     -webkit-user-drag: none;
+
 }
 
 .showHideIcon {

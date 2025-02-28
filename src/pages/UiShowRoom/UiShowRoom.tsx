@@ -8,7 +8,7 @@ export const UiShowRoom = () => {
     const [mail, setMail] = useState('');
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <div>
             <Button text="Зарегистрироваться" type="button" />
             <Button text="Зарегистрироваться"/>
             <Input
