@@ -59,10 +59,10 @@ export const Input: FC<InputProps> = ({
             tabIndex={-1}
         >
             {type === InputType.password || type === InputType.email ? (
-                <div className={styles.separatorContainer}>
+                <>
                     <img src={getIconSrc()} className={styles.icon} />
                     <div className={styles.separator}></div>
-                </div>
+                </>
             ) : (
                 <></>
             )}
