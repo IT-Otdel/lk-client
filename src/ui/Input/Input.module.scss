@@ -1,19 +1,17 @@
 @use 'styles/variables' as *;
 
 .container {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-
     box-sizing: border-box;
     transition: none;
-    width: 400px;
+    min-width: 250px;
     height: 58px;
     border-radius: 12px;
     padding: 10px 20px;
     color: #808080;
     outline: none;
     box-shadow: none;
-    min-width: 0;
     border: 1px solid transparent;
     cursor: text;
     background:
@@ -21,7 +19,7 @@
         $grey-gradient border-box;
 
     .inputField {
-        font-family: Jost;
+        font-family: Jost, sans-serif ;
         font-weight: 500;
 
         border: none;
