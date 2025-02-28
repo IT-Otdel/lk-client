@@ -1,19 +1,18 @@
 @use 'styles/variables' as *;
 
 .container {
-    display: flex;
+    display: inline-flex;
+    vertical-align: top;
     align-items: center;
-
     box-sizing: border-box;
     transition: none;
-    width: 400px;
+    min-width: 250px;
     height: 58px;
     border-radius: 12px;
     padding: 10px 20px;
     color: #808080;
     outline: none;
     box-shadow: none;
-    min-width: 0;
     border: 1px solid transparent;
     cursor: text;
     background:
@@ -21,7 +20,7 @@
         $grey-gradient border-box;
 
     .inputField {
-        font-family: Jost;
+        font-family: Jost, sans-serif;
         font-weight: 500;
 
         border: none;
@@ -35,8 +34,8 @@
     &:has(.inputField:hover),
     &:has(.inputField:focus) {
         background:
-        linear-gradient(#2f2f2f, #2f2f2f 0) padding-box,
-        $grey-gradient border-box;
+            linear-gradient(#2f2f2f, #2f2f2f 0) padding-box,
+            $grey-gradient border-box;
     }
 }
 
@@ -45,11 +44,13 @@
     height: 20px;
     background-color: #808080;
     margin: 0 12px 0 12px;
+
 }
 
 .icon {
     user-select: none;
     -webkit-user-drag: none;
+
 }
 
 .showHideIcon {
